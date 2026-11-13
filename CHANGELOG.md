@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.1.1...v1.1.2) (2026-11-13)
+
+
+### Bug Fixes
+
+* loosen setUserAgentString fingerprint filter, disable by default ([28a4e95](https://github.com/buzzCraft/MorpheTeamsPatch/commit/28a4e951d2657daeecb9ac424394f65366dad557))
+
 ## [1.1.1](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.1.0...v1.1.1) (2026-11-13)
 
 

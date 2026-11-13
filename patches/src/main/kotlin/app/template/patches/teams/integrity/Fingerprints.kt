@@ -1,6 +1,7 @@
 package app.template.patches.teams.integrity
 
 import app.morphe.patcher.Fingerprint
+import app.morphe.patcher.methodCall
 import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
 
@@ -23,6 +24,11 @@ internal val webViewAuthSetUpWebViewFingerprint = Fingerprint(
         "Landroid/webkit/WebView;",
     ),
     filters = listOf(
-        string("setUserAgentString"),
+        methodCall(
+            definingClass = "Landroid/webkit/WebSettings;",
+            name = "setUserAgentString",
+            parameters = listOf("Ljava/lang/String;"),
+            returnType = "V",
+        ),
     ),
 )

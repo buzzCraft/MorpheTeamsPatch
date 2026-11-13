@@ -1,7 +1,5 @@
 rootProject.name = "MorpheTeamsPatch"
 
-include("patch-source")
-
 pluginManagement {
     repositories {
         mavenLocal()
@@ -22,3 +20,8 @@ pluginManagement {
 plugins {
     id("app.morphe.patches") version "1.3.4"
 }
+
+// The plugin's settings { patchesProjectPath = ... } block has no effect:
+// SettingsPlugin.apply() calls settings.include(":$patchesProjectPath") eagerly,
+// before any later configuration in this script can run. So the patches
+// subproject must actually be named "patches" (the plugin's hardcoded default).

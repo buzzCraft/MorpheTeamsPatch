@@ -1,3 +1,7 @@
+plugins {
+    id("app.morphe.patches") apply false
+}
+
 group = "com.buzzcraft.morphe-teams-patch"
 
 patches {

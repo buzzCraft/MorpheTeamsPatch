@@ -2,7 +2,6 @@ package app.template.patches.teams.integrity
 
 import app.morphe.patcher.Fingerprint
 import app.morphe.patcher.methodCall
-import app.morphe.patcher.string
 import com.android.tools.smali.dexlib2.AccessFlags
 
 // =============================================================================
@@ -24,11 +23,12 @@ internal val webViewAuthSetUpWebViewFingerprint = Fingerprint(
         "Landroid/webkit/WebView;",
     ),
     filters = listOf(
+        // Match on method name only. Constraining definingClass/parameters/returnType
+        // too tightly made this fail to match on a real device (reported: Teams
+        // 1416/1.0.0.2026152302) — the call may go through a WebSettings subtype,
+        // a different overload, or otherwise not look exactly like the SDK signature.
         methodCall(
-            definingClass = "Landroid/webkit/WebSettings;",
             name = "setUserAgentString",
-            parameters = listOf("Ljava/lang/String;"),
-            returnType = "V",
         ),
     ),
 )

@@ -15,6 +15,8 @@ jobs:
       packages: write
       id-token: write
       attestations: write
+      issues: write
+      pull-requests: write
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -30,8 +32,6 @@ jobs:
           java-version: '21'
       - name: Cache Gradle
         uses: burrunan/gradle-cache-action@v3
-      - name: Build
-        run: ./gradlew :patches:buildAndroid generatePatchesList clean
       - name: Setup Node.js
         uses: actions/setup-node@v6
         with:
@@ -39,9 +39,19 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
+      # The Gradle build runs *inside* the Release step below (see .releaserc.json's
+      # @semantic-release/exec prepareCmd), not here. It has to happen after
+      # gradle-semantic-release-plugin has written the real version into
+      # gradle.properties, otherwise the built .mpp has no version in its filename
+      # and can never match the download_url patches-bundle.json points at.
       - name: Release
         uses: cycjimmy/semantic-release-action@v5
         id: release
+      # Only on branches/commits that don't produce a release (chore commits, PRs,
+      # non-main/dev branches), verify the project still compiles.
+      - name: Verify project compiles
+        if: steps.release.outputs.new_release_published != 'true'
+        run: ./gradlew :patches:buildAndroid clean --no-daemon
       - name: Attest
         if: steps.release.outputs.new_release_published == 'true'
         uses: actions/attest-build-provenance@v4

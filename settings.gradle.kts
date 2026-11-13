@@ -11,6 +11,10 @@ pluginManagement {
         maven {
             name = "GitHubPackages"
             url = uri("https://maven.pkg.github.com/MorpheApp/registry")
+            credentials {
+                username = System.getenv("GITHUB_ACTOR") ?: "unused"
+                password = System.getenv("GITHUB_TOKEN") ?: "unused"
+            }
         }
     }
 }

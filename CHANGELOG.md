@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.1.0...v1.1.1) (2026-11-13)
+
+
+### Bug Fixes
+
+* grant issues/PR write permissions for semantic-release success step ([903bcf2](https://github.com/buzzCraft/MorpheTeamsPatch/commit/903bcf2413e9d546cd712c70e1b0d0ef21cc9f82))
+* upload the .mpp release asset and keep patches-bundle.json in sync ([fa2dce3](https://github.com/buzzCraft/MorpheTeamsPatch/commit/fa2dce3fdfe5a8ed942eeec85974a73e6cfda487))
+
 # [1.1.0](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.0.0...v1.1.0) (2026-11-13)
 
 

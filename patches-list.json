@@ -1,12 +1,14 @@
 {
   "NOTE": "Do NOT manually edit this file. This file is automatically updated when semantic release (release.yml) runs. Manually editing this file can break your releases and break third party tools that use this file.",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "patches": [
     {
       "name": "Desktop User-Agent for Login",
       "description": "Spoofs the WebView user agent to a desktop Chrome user agent during Microsoft login, allowing login as a desktop client instead of mobile. Works with conditional access policies that block mobile user agents.",
       "default": false,
-      "dependencies": [],
+      "dependencies": [
+        "BytecodePatch"
+      ],
       "compatiblePackages": [
         {
           "packageName": "com.microsoft.teams",

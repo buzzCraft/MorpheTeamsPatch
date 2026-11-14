@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.1.3...v1.1.4) (2026-11-14)
+
+
+### Bug Fixes
+
+* add integrity bypass dependency to UserAgent patch ([3265bea](https://github.com/buzzCraft/MorpheTeamsPatch/commit/3265bea6af13a3eef768160e99b3fbf56503000e))
+
 ## [1.1.3](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.1.2...v1.1.3) (2026-11-14)
 
 

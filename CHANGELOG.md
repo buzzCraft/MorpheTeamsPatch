@@ -1,3 +1,10 @@
+## [1.1.5](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.1.4...v1.1.5) (2026-11-14)
+
+
+### Bug Fixes
+
+* narrow UserAgent fingerprint to WebViewAuthorizationFragment class ([8abfded](https://github.com/buzzCraft/MorpheTeamsPatch/commit/8abfdedf0f75369a5472f4c6bd7bddd894fa998d))
+
 ## [1.1.4](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.1.3...v1.1.4) (2026-11-14)
 
 

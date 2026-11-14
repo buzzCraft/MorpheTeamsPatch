@@ -8,10 +8,9 @@ import com.android.tools.smali.dexlib2.iface.instruction.FiveRegisterInstruction
 // Desktop Chrome user agent string to spoof as desktop browser
 private const val DESKTOP_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
 
-// default = false: this patch's fingerprint failed to match on a real device
-// (Teams 1416/1.0.0.2026152302) before the filter was loosened to a name-only
-// match. Left off by default until confirmed working on a real install again —
-// opt in explicitly to test it.
+// default = false: this patch's fingerprint previously failed to match on a real
+// device (Teams 1416/1.0.0.2026152302). The fingerprint has been loosened to
+// match solely on the setUserAgentString method call — enable to test.
 @Suppress("unused")
 val teamsUserAgentPatch = bytecodePatch(
     name = "Desktop User-Agent for Login",

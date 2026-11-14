@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.1.2...v1.1.3) (2026-11-14)
+
+
+### Bug Fixes
+
+* loosen webViewAuthSetUpWebViewFingerprint to match on setUserAgentString only ([86855c2](https://github.com/buzzCraft/MorpheTeamsPatch/commit/86855c2f34f5a3dac498730f2264a0dfd90fa3d7))
+
 ## [1.1.2](https://github.com/buzzCraft/MorpheTeamsPatch/compare/v1.1.1...v1.1.2) (2026-11-13)
 
 

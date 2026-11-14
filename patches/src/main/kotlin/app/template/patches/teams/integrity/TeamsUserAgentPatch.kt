@@ -19,6 +19,7 @@ val teamsUserAgentPatch = bytecodePatch(
     default = false,
 ) {
     compatibleWith(TEAMS_COMPATIBILITY)
+    dependsOn(teamsIntegrityBypassDependency())
 
     execute {
         // Find the setUserAgentString(String) call matched by the fingerprint's

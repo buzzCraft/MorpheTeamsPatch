@@ -15,10 +15,11 @@ import com.android.tools.smali.dexlib2.AccessFlags
 // It calls WebSettings.setUserAgentString() to set the user agent.
 // We inject a const-string with a desktop user agent before that call.
 //
-// The fingerprint is intentionally loose (no definingClass, name, accessFlags,
-// parameters, returnType) because the exact signature varies across builds.
-// The methodCall filter for setUserAgentString uniquely identifies it.
+// Match on the MSAL WebViewAuthorizationFragment class + setUserAgentString call.
+// Other constraints (method name, accessFlags, parameters, returnType) are
+// loosened because the exact signature varies across builds.
 internal val webViewAuthSetUpWebViewFingerprint = Fingerprint(
+    definingClass = "Lcom/microsoft/identity/common/internal/providers/oauth2/WebViewAuthorizationFragment;",
     filters = listOf(
         methodCall(
             name = "setUserAgentString",
